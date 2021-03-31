@@ -7,6 +7,9 @@ with open("discord/ext/DiscordLang/__init__.py") as stream:
         r"^__version__\s*=\s*[\'\"]([^\'\"]*)[\'\"]", stream.read(), re.MULTILINE
     ).group(1)
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -43,5 +46,7 @@ setuptools.setup(
     project_urls=project_urls,
     python_requires=">=3.5.3",
     url="https://github.com/AtaeKurri/discord-ext-DiscordLang",
-    version=version
+    version=version,
+    long_description=long_description,
+    long_description_content_type="text/markdown",
 )
